@@ -28,10 +28,10 @@ app.get('/',(req,res) =>{
 });
 
 app.post('/user',(req,res) =>{
-    const {n,c,m} = req.body;
-    let newUser = {n,c,m}
-    users.push(newUser);
-    res.json({mm:"Usuario adicionando com sucesso",n});
+    const newUser = req.body;
+    users = [...users,newUser];
+    res.send("Usuario adicionado com sucesso...")
+
 })
 
 app.listen(port,()=>{
